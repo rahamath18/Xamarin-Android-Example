@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Xamarin_Android_Example"
+             x:Class="Xamarin_Android_Example.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid x:Name="maingrid">
+
+                <ScrollView Orientation="Vertical" HorizontalOptions="Fill">
+                    <Grid ColumnSpacing="0" RowSpacing="{x:OnPlatform UWP={OnIdiom Desktop=10,Phone=4}}" BackgroundColor="#cccccc" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <StackLayout Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                                     HorizontalOptions="Center" Padding="5, 0, 0, 0">
+                            <Label Text="User Details Form" TextColor="Blue" FontSize="34" HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="Fill">
+                            <StackLayout BackgroundColor="#dbdbdb" Orientation="Horizontal" VerticalOptions="FillAndExpand" 
+                                         HorizontalOptions="FillAndExpand" Padding="5, 0, 0, 0">
+                                <Label Text="First Name" TextColor="#111111" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill">
+                            <Entry x:Name="FirstName" HorizontalOptions="FillAndExpand" Text="" Keyboard="Text" Placeholder="First name"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="Fill">
+                            <StackLayout BackgroundColor="#dbdbdb" Orientation="Horizontal" VerticalOptions="FillAndExpand" 
+                                         HorizontalOptions="FillAndExpand" Padding="5, 0, 0, 0">
+                                <Label Text="Last Name" TextColor="#111111" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill">
+                            <Entry x:Name="LastName" HorizontalOptions="FillAndExpand" Text="" Keyboard="Text" Placeholder="Last name"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="Fill">
+                            <StackLayout BackgroundColor="#dbdbdb" Orientation="Horizontal" VerticalOptions="FillAndExpand" 
+                                         HorizontalOptions="FillAndExpand" Padding="5, 0, 0, 0">
+                                <Label Text="Email" TextColor="#111111" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Row="3" Grid.Column="1" HorizontalOptions="Fill">
+                            <Entry x:Name="Email" HorizontalOptions="FillAndExpand" Text="" Keyboard="Text" Placeholder="Email"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="4" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="Fill">
+                            <StackLayout BackgroundColor="#dbdbdb" Orientation="Horizontal" VerticalOptions="FillAndExpand" 
+                                         HorizontalOptions="FillAndExpand" Padding="5, 0, 0, 0">
+                                <Label Text="Phone" TextColor="#111111" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Row="4" Grid.Column="1" HorizontalOptions="Fill">
+                            <Entry x:Name="Phone" HorizontalOptions="FillAndExpand" Text="" Keyboard="Text" Placeholder="Phone"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="5" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="Fill">
+                            <StackLayout BackgroundColor="#dbdbdb" Orientation="Horizontal" VerticalOptions="FillAndExpand" 
+                                         HorizontalOptions="FillAndExpand" Padding="5, 0, 0, 0">
+                                <Label Text="Status" TextColor="#111111" HorizontalOptions="Start" VerticalOptions="Center" />
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Row="5" Grid.Column="1" HorizontalOptions="Fill">
+                            <Picker x:Name="statusPicker" HorizontalOptions="FillAndExpand" SelectedIndexChanged="StatusPicker_SelectedIndexChanged"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                                     HorizontalOptions="Center" Padding="5, 0, 0, 0">
+                            <Button Text="Save" Clicked="SaveButton_Clicked" HorizontalOptions="Fill" VerticalOptions="Center"
+                            BackgroundColor="#093e93" TextColor="WhiteSmoke"  BorderColor="#093e93" BorderWidth="1"/>
+                            <Button Text="Clear" Clicked="ClearButton_Clicked" HorizontalOptions="Fill" VerticalOptions="Center"
+                            BackgroundColor="Orange" TextColor="WhiteSmoke"  BorderColor="#093e93" BorderWidth="1"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                                     HorizontalOptions="Center" Padding="5, 0, 0, 0">
+                            <Label x:Name="SuccessOrErrorMsg"  Text="" TextColor="Green" FontSize="20" HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                    </Grid>
+                </ScrollView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
